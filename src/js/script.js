@@ -53,16 +53,25 @@
   };
 
   class Product {
-    constructor() {
+    constructor(id, data) {
       const thisProduct = this;
-
+      thisProduct.id = id;
+      thisProduct.data = data;
+      
       console.log('new Product: ', thisProduct);
     }
   }
 
   const app = {
     initMenu: function () {
+      const thisApp = this;
       const testProduct = new Product();
+      console.log('testProduct thisApp: ', thisApp.data);
+
+      for (let productData in thisApp.data.products) {
+        new Product(productData, thisApp.data.products[productData]); //???? s
+      }
+
       console.log('testProduct: ', testProduct);
     },
     initData: function () {
