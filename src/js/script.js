@@ -65,6 +65,10 @@
       const testProduct = new Product();
       console.log('testProduct: ', testProduct);
     },
+    initData: function () {
+      const thisApp = this;
+      thisApp.data = dataSource;
+    },
     init: function () {
       const thisApp = this;
       console.log('*** App starting ***');
@@ -73,6 +77,7 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
 
+      thisApp.initData();
       thisApp.initMenu();
     },
   };
